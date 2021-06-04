@@ -1,0 +1,25 @@
+:host #typography-helpers .source-code {
+  position: relative;
+  margin-bottom: 24px;
+  min-height: 180px;
+}
+
+:host #typography-helpers .source-code code {
+  background: none !important;
+}
+
+:host #typography-helpers .preview {
+  font-size: 16px;
+  padding: 16px;
+  margin-bottom: 24px;
+  min-height: 180px;
+}
+
+:host #typography-helpers .preview:last-child {
+  margin-bottom: 0;
+}
+
+:host #typography-helpers .preview .mat-caption {
+  margin-bottom: 16px;
+}
+/*# sourceMappingURL=helpers.component.css.map */

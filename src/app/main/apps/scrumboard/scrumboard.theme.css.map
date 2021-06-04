@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "scrumboard.theme.scss"
+    ],
+    "names": [],
+    "file": "scrumboard.theme.css"
+}

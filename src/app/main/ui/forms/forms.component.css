@@ -1,0 +1,20 @@
+:host .content form {
+  width: 100%;
+  max-width: 800px !important;
+}
+
+:host .content .form-errors-model {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+:host .content .form-errors-model code {
+  background: none !important;
+}
+
+:host .content .horizontal-stepper-wrapper,
+:host .content .vertical-stepper-wrapper {
+  max-width: 800px;
+}
+/*# sourceMappingURL=forms.component.css.map */

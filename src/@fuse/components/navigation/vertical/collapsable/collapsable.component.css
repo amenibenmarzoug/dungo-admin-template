@@ -1,0 +1,28 @@
+.folded:not(.unfolded) :host .nav-link > span {
+  opacity: 0;
+  -webkit-transition: opacity 200ms ease;
+  transition: opacity 200ms ease;
+}
+
+.folded:not(.unfolded) :host.open .children {
+  display: none !important;
+}
+
+:host .nav-link .collapsable-arrow {
+  -webkit-transition: opacity .25s ease-in-out .1s, -webkit-transform .3s ease-in-out;
+  transition: opacity .25s ease-in-out .1s, -webkit-transform .3s ease-in-out;
+  transition: transform .3s ease-in-out, opacity .25s ease-in-out .1s;
+  transition: transform .3s ease-in-out, opacity .25s ease-in-out .1s, -webkit-transform .3s ease-in-out;
+  -webkit-transform: rotate(0);
+          transform: rotate(0);
+}
+
+:host > .children {
+  overflow: hidden;
+}
+
+:host.open > .nav-link .collapsable-arrow {
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+/*# sourceMappingURL=collapsable.component.css.map */

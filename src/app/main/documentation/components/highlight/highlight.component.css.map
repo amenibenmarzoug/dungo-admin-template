@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAEI,KAFC,CAED,QAAQ,CAAA;EACJ,SAAS,EAAE,MAAM;CACpB",
+    "sources": [
+        "highlight.component.scss"
+    ],
+    "names": [],
+    "file": "highlight.component.css"
+}

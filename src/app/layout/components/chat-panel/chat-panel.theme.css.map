@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "chat-panel.theme.scss"
+    ],
+    "names": [],
+    "file": "chat-panel.theme.css"
+}

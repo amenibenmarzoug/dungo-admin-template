@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "demo-sidebar.component.scss"
+    ],
+    "names": [],
+    "file": "demo-sidebar.component.css"
+}

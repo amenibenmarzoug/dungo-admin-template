@@ -1,0 +1,25 @@
+:host #typography-headings .source-code {
+  position: relative;
+  margin-bottom: 24px;
+  min-height: 180px;
+}
+
+:host #typography-headings .source-code code {
+  background: none !important;
+}
+
+:host #typography-headings .preview {
+  font-size: 16px;
+  padding: 16px;
+  margin-bottom: 24px;
+  min-height: 180px;
+}
+
+:host #typography-headings .preview:last-child {
+  margin-bottom: 0;
+}
+
+:host #typography-headings .preview .mat-caption {
+  margin-bottom: 16px;
+}
+/*# sourceMappingURL=headings.component.css.map */

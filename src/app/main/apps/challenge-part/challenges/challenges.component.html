@@ -1,0 +1,105 @@
+<div id="academy-courses" class="page-layout simple">
+
+    <!-- HEADER -->
+    <div class="header accent p-16 p-sm-24" fxLayout="column" fxLayoutAlign="center center">
+
+        <div class="hero-text">
+            <mat-icon class="hero-icon">school</mat-icon>
+            <h1 [@animate]="{value:'*',params:{delay:'100ms', y:'25px'}}">
+                Bienvenue à la plateforme DUNGO
+            </h1>
+            <h3 [@animate]="{value:'*',params:{delay:'100ms', y:'25px'}}">
+                DUNGO IS YOUR PARTNER FOR
+                ECOLOGICAL SUSTAINABILITY AND YOUR WAY FOR AN ECO-CITIZEN
+                NETWORKING
+            </h3>
+        </div>
+
+    </div>
+    <!-- / HEADER -->
+
+    <!-- CONTENT -->
+    <div class="content p-24">
+
+        <div fxLayout="column" fxLayoutAlign="center">
+
+            <div class="filters" fxLayout="column" fxLayoutAlign="center center" fxLayout.gt-xs="row"
+                fxLayoutAlign.gt-xs="space-between center">
+
+                <mat-form-field appearance="outline" floatLabel="always" class="course-search">
+                    <mat-label>Chercher un challenge</mat-label>
+                    <input matInput placeholder="Enter a keyword..." [(ngModel)]="searchTerm"
+                        (input)="filterChallengesByTerm()">
+                </mat-form-field>
+
+                <mat-form-field appearance="outline" class="category-selector">
+                    <mat-label>Category</mat-label>
+                    <mat-select [(ngModel)]="currentCategory" (selectionChange)="filterChallengesByCategory()">
+                        <mat-option [value]="'all'">
+                            All
+                        </mat-option>
+                        <mat-option *ngFor="let category of categories" [value]="category.value">
+                            {{ category.label }}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <!-- ADD EVENT BUTTON -->
+                <button mat-fab class="add-event-button mat-accent" aria-label="Add event"
+                    [@animate]="{value:'*',params:{delay:'300ms',scale:'0.2'}}" (click)="newChallenge()">
+                    <mat-icon>add</mat-icon>
+                </button>
+                <!-- / ADD EVENT BUTTON -->
+
+            </div>
+
+            <div class="courses" fxLayout="row wrap" fxLayoutAlign="center" [@animateStagger]="{value:'50'}">
+
+                <div class="course" *ngFor="let challenge of filteredChallenges" fxFlex="100" fxFlex.gt-xs="50"
+                    fxFlex.gt-sm="33" [ngClass]="challenge.category" [@animate]="{value:'*',params:{y:'100%'}}">
+
+                    <div class="course-content" fxLayout="column" fxFlex="1 1 auto">
+
+                        <div class="header" fxLayout="row" fxLayoutAlign="center center"
+                            [ngClass]="challenge.category + '-bg'">
+
+                            <div class="category" fxFlex>
+                                {{challenge.type}}
+                            </div>
+
+                            <div class="length" fxLayout="row" fxLayoutAlign="center center">
+                                <mat-icon class="length-icon s-20">access_time</mat-icon>
+                                <div class="min">{{challenge.nbPoints}} points</div>
+                            </div>
+
+                        </div>
+
+                        <div class="content" fxLayout="column" fxLayoutAlign="center center" fxFlex="1 1 auto">
+                            <div class="h1">{{challenge.missionTitle}}</div>
+                            <div class="updated">Date Début:  {{challenge.missionStart | date}}</div>
+                            <div class="updated">Date Fin:  {{challenge.missionExp | date}}</div>
+                            <!-- <div class="updated" *ngIf="challenge.missionDesc != ''">Description:  {{challenge.missionDesc}}</div> -->
+                        </div>
+
+                        <div class="footer" fxLayout="row" fxLayoutAlign="center center">
+                          
+                            <button mat-button color="accent">
+                                Supprimer
+                            </button>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="no-courses" *ngIf="filteredChallenges.length === 0">
+                    No courses found!
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+    <!-- / CONTENT -->
+
+</div>

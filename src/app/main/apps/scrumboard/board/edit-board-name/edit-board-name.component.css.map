@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,0BAA0B,CAAC;EACvB,OAAO,EAAE,gBAAgB;CAQ5B;;AATD,AAGI,0BAHsB,CAGtB,WAAW,CAAC;EACR,aAAa,EAAE,QAAQ;EACvB,QAAQ,EAAE,MAAM;EAChB,SAAS,EAAE,IAAI;EACf,WAAW,EAAE,GAAG;CACnB",
+    "sources": [
+        "edit-board-name.component.scss"
+    ],
+    "names": [],
+    "file": "edit-board-name.component.css"
+}

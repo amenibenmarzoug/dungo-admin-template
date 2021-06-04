@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "file-manager.theme.scss"
+    ],
+    "names": [],
+    "file": "file-manager.theme.css"
+}

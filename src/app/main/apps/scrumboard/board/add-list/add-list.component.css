@@ -1,0 +1,30 @@
+scrumboard-board-add-list .new-list {
+  border-radius: 2px;
+}
+
+scrumboard-board-add-list .new-list .new-list-form-button {
+  text-transform: none;
+  font-size: 15px;
+  padding: 0 16px;
+  height: 64px;
+  margin: 0;
+  width: 100%;
+}
+
+scrumboard-board-add-list .new-list .new-list-form-button mat-icon {
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  line-height: 40px;
+  margin-right: 16px;
+}
+
+scrumboard-board-add-list .new-list .new-list-form {
+  padding: 16px;
+  height: 64px;
+}
+
+scrumboard-board-add-list .new-list .new-list-form > input {
+  height: 100%;
+}
+/*# sourceMappingURL=add-list.component.css.map */

@@ -1,0 +1,11 @@
+scrumboard-edit-board-name {
+  display: block !important;
+}
+
+scrumboard-edit-board-name .board-name {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  font-size: 15px;
+  font-weight: 600;
+}
+/*# sourceMappingURL=edit-board-name.component.css.map */

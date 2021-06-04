@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAEI,KAFC,CAED,QAAQ,CAAC;EACL,SAAS,EAAE,MAAM;CAapB;;AAhBL,AAKQ,KALH,CAED,QAAQ,CAGJ,YAAY,CAAC;EACT,KAAK,EAAE,KAAK;EACZ,MAAM,EAAE,KAAK;CAQhB;;AAfT,AASY,KATP,CAED,QAAQ,CAGJ,YAAY,CAIR,UAAU,CAAC;EACP,SAAS,EAAE,IAAI;EACf,SAAS,EAAE,UAAU;EACrB,KAAK,EAAE,KAAK;EACZ,UAAU,EAAE,MAAM;CACrB",
+    "sources": [
+        "icons.component.scss"
+    ],
+    "names": [],
+    "file": "icons.component.css"
+}

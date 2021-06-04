@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAIQ,KAJH,CAED,QAAQ,CAEJ,IAAI,CAAC;EACD,KAAK,EAAE,IAAI;EACX,SAAS,EAAE,gBAAgB;CAC9B;;AAPT,AASQ,KATH,CAED,QAAQ,CAOJ,kBAAkB,CAAC;EACf,IAAI,EAAE,CAAC;CAKV;;AAfT,AAYY,KAZP,CAED,QAAQ,CAOJ,kBAAkB,CAGd,IAAI,CAAC;EACD,UAAU,EAAE,eAAe;CAC9B;;AAdb,AAiBQ,KAjBH,CAED,QAAQ,CAeJ,2BAA2B;AAjBnC,KAAK,CAED,QAAQ,CAgBJ,yBAAyB,CAAC;EACtB,SAAS,EAAE,KAAK;CACnB",
+    "sources": [
+        "forms.component.scss"
+    ],
+    "names": [],
+    "file": "forms.component.css"
+}

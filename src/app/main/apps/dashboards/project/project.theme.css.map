@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "project.theme.scss"
+    ],
+    "names": [],
+    "file": "project.theme.css"
+}

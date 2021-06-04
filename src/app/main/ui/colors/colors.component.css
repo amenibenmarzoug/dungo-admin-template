@@ -1,0 +1,13 @@
+:host .content .color-tabs-content .color-header {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+:host .content .color-tabs-content .color .fg-box {
+  background-color: white;
+}
+
+:host .content .color-tabs-content .colored-bg {
+  -webkit-transition: background-color 400ms ease;
+  transition: background-color 400ms ease;
+}
+/*# sourceMappingURL=colors.component.css.map */

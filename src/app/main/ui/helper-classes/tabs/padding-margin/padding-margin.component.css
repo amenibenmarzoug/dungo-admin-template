@@ -1,0 +1,25 @@
+:host #helper-classes-padding-margin .source-code {
+  position: relative;
+  margin-bottom: 24px;
+  min-height: 180px;
+}
+
+:host #helper-classes-padding-margin .source-code code {
+  background: none !important;
+}
+
+:host #helper-classes-padding-margin .preview {
+  font-size: 16px;
+  padding: 16px;
+  margin-bottom: 24px;
+  min-height: 180px;
+}
+
+:host #helper-classes-padding-margin .preview:last-child {
+  margin-bottom: 0;
+}
+
+:host #helper-classes-padding-margin .preview .mat-caption {
+  margin-bottom: 16px;
+}
+/*# sourceMappingURL=padding-margin.component.css.map */

@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "error-500.theme.scss"
+    ],
+    "names": [],
+    "file": "error-500.theme.css"
+}

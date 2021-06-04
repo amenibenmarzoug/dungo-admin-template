@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,WAAW,CAAC;EACR,OAAO,EAAE,IAAI;EACb,cAAc,EAAE,MAAM;EACtB,IAAI,EAAE,QAAQ;EACd,KAAK,EAAE,KAAK;EACZ,SAAS,EAAE,KAAK;EAChB,SAAS,EAAE,KAAK;EAChB,OAAO,EAAE,EAAE;CAKd;;AAZD,AASI,WATO,CASP,yBAAyB,CAAC;EACtB,IAAI,EAAE,CAAC;CACV",
+    "sources": [
+        "quick-panel.component.scss"
+    ],
+    "names": [],
+    "file": "quick-panel.component.css"
+}

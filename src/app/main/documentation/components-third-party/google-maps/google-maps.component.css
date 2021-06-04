@@ -1,0 +1,9 @@
+:host .content {
+  max-width: 960px;
+}
+
+:host agm-map {
+  width: 100%;
+  height: 300px;
+}
+/*# sourceMappingURL=google-maps.component.css.map */

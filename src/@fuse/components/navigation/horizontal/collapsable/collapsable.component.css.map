@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "collapsable.component.scss"
+    ],
+    "names": [],
+    "file": "collapsable.component.css"
+}

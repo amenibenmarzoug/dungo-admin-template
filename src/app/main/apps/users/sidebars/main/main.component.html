@@ -1,0 +1,43 @@
+<div class="sidebar-content">
+
+    <div class="card">
+
+
+        <!-- / SIDEBAR HEADER -->
+
+        <!-- SIDEBAR CONTENT -->
+        <div class="content py-16" fusePerfectScrollbar>
+
+            <div class="nav material2">
+
+                <div class="nav-item" aria-label="inbox">
+                    <a class="nav-link" matRipple (click)="changeFilter('all')"
+                       [ngClass]="{'active accent':filterBy ==='all'}">
+                        <span class="title">Tous les utilisateurs</span>
+                    </a>
+                </div>
+
+                <div class="nav-item" aria-label="Pilier 1" (click)="changeFilter('dungers')">
+                    <a class="nav-link" matRipple [ngClass]="{'active accent':filterBy ==='dungers'}">
+                        <div class="title">Les Dungers</div>
+                    </a>
+                </div>
+                <div class="nav-item" aria-label="Pilier 2" (click)="changeFilter('managers')">
+                    <a class="nav-link" matRipple [ngClass]="{'active accent':filterBy ==='managers'}">
+                        <div class="title">Les Agents</div>
+                    </a>
+                </div>
+<!-- 
+                <div class="nav-item" aria-label="Pilier 2" (click)="changeFilter('without')">
+                    <a class="nav-link" matRipple [ngClass]="{'active accent':filterBy ==='without'}">
+                        <div class="title">Compte à valider</div>
+                    </a>
+                </div> -->
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+<!-- / SIDEBAR CONTENT -->

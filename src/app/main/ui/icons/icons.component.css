@@ -1,0 +1,16 @@
+:host .content {
+  max-width: 1200px;
+}
+
+:host .content .icon-holder {
+  width: 112px;
+  height: 120px;
+}
+
+:host .content .icon-holder .icon-name {
+  font-size: 12px;
+  word-wrap: break-word;
+  width: 100px;
+  text-align: center;
+}
+/*# sourceMappingURL=icons.component.css.map */

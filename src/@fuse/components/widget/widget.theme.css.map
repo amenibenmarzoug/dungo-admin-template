@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "widget.theme.scss"
+    ],
+    "names": [],
+    "file": "widget.theme.css"
+}

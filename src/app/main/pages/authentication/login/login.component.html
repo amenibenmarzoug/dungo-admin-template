@@ -1,0 +1,84 @@
+<div id="login" fxLayout="column">
+
+    <div id="login-form-wrapper" fxLayout="column" fxLayoutAlign="center center">
+
+        <div id="login-form" [@animate]="{value:'*',params:{duration:'300ms',y:'100px'}}">
+
+            <div class="logo">
+                <img src="assets/images/logos/logo.svg">
+            </div>
+
+            <div class="title">Connectez-vous à votre compte</div>
+
+            <form *ngIf="!isLoggedIn" name="loginForm" [formGroup]="loginForm" (ngSubmit)="onSubmit()" novalidate>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Email</mat-label>
+                    <input matInput formControlName="email" [(ngModel)]="loginForm.email" required >
+                    <mat-icon matSuffix class="secondary-text">mail</mat-icon>
+                    <mat-error *ngIf="loginForm.get('email').hasError('required')">
+                        Le champ Email est requis
+                    </mat-error>
+                    <mat-error *ngIf="!loginForm.get('email').hasError('required') &&
+                                loginForm.get('email').hasError('email')">
+                        Veuillez saisir un e-mail valide
+                    </mat-error>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Mot de passe</mat-label>
+                    <input matInput type="password" formControlName="password" [(ngModel)]="loginForm.password" required>
+                    <mat-icon matSuffix class="secondary-text">vpn_key</mat-icon>
+                    <mat-error>
+                        Le champ mot de passe est requis
+                    </mat-error>
+                </mat-form-field>
+
+                <div class="remember-forgot-password" fxLayout="row" fxLayout.xs="column"
+                    fxLayoutAlign="space-between center">
+                    <!-- <mat-checkbox class="remember-me" aria-label="Remember Me">
+                        Remember Me
+                    </mat-checkbox> -->
+
+                    <a class="forgot-password" [routerLink]="'/pages/auth/forgot-password'">
+                        Mot de passe oublié?
+                    </a>
+                </div>
+
+                <button mat-raised-button color="accent" class="submit-button" aria-label="LOG IN"
+                    [disabled]="loginForm.invalid" type="submit">
+                    Connexion
+                </button>
+                <div class="alert alert-danger" fxLayout="column" fxLayoutAlign="center center" role="alert"
+                    *ngIf="isLoginFailed">
+
+                   Login Failed: {{errorMessage}}
+                </div>
+
+            </form>
+            <div class="alert alert-success" *ngIf="isLoggedIn">
+                Logged in as {{ roles }}.
+            </div>
+
+            <div class="separator">
+                <span class="text">OU</span>
+            </div>
+
+            <button mat-raised-button class="google">
+                Connectez-vous avec Google
+            </button>
+
+            <button mat-raised-button class="facebook">
+                Connectez-vous avec Facebook
+            </button>
+
+            <div class="register" fxLayout="column" fxLayoutAlign="center center">
+                <span class="text">Vous n'avez pas de compte ?</span>
+                <a class="link" [routerLink]="'/pages/auth/register-2'">Créer un compte</a>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

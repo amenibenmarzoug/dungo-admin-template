@@ -1,0 +1,56 @@
+#dashboard-project > .sidebar {
+  width: 280px;
+  min-width: 280px;
+  max-width: 280px;
+}
+
+#dashboard-project > .center > .header {
+  height: 160px;
+  min-height: 160px;
+  max-height: 160px;
+}
+
+#dashboard-project > .center > .header .selected-project {
+  background: rgba(0, 0, 0, 0.12);
+  color: #FFFFFF;
+  padding: 8px 16px;
+  height: 40px;
+  line-height: 24px;
+  font-size: 16px;
+  border-radius: 8px 0 0 0;
+}
+
+#dashboard-project > .center > .header .project-selector {
+  margin-left: 1px;
+  background: rgba(0, 0, 0, 0.12);
+  border-radius: 0 8px 0 0;
+}
+
+#dashboard-project > .center > .header .project-selector mat-icon {
+  color: #FFFFFF;
+}
+
+#dashboard-project > .center > .content {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+#dashboard-project > .center > .content mat-tab-group {
+  height: 100%;
+}
+
+#dashboard-project > .center > .content mat-tab-group .mat-tab-body-wrapper {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+#dashboard-project > .center > .content .mat-tab-label-container {
+  padding: 0 24px;
+}
+
+#dashboard-project .widget.widget5 .gridline-path.gridline-path-horizontal {
+  display: none;
+}
+/*# sourceMappingURL=project.component.css.map */

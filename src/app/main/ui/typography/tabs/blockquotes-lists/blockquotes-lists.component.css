@@ -1,0 +1,26 @@
+:host #typography-blockquotes-lists .source-code {
+  position: relative;
+  margin-bottom: 24px;
+  min-height: 180px;
+  max-height: 500px;
+}
+
+:host #typography-blockquotes-lists .source-code code {
+  background: none !important;
+}
+
+:host #typography-blockquotes-lists .preview {
+  font-size: 16px;
+  padding: 16px;
+  margin-bottom: 24px;
+  min-height: 180px;
+}
+
+:host #typography-blockquotes-lists .preview:last-child {
+  margin-bottom: 0;
+}
+
+:host #typography-blockquotes-lists .preview .mat-caption {
+  margin-bottom: 16px;
+}
+/*# sourceMappingURL=blockquotes-lists.component.css.map */

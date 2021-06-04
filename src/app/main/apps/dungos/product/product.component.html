@@ -1,0 +1,409 @@
+
+<div id="dungo" class="page-layout carded fullwidth inner-scroll">
+
+    <!-- TOP BACKGROUND -->
+    <div class="top-bg accent"></div>
+    <!-- / TOP BACKGROUND -->
+
+    <!-- CENTER -->
+    <div class="center">
+
+        <!-- HEADER -->
+        <div class="header accent" fxLayout="row" fxLayoutAlign="space-between center">
+
+            <!-- APP TITLE -->
+            <div fxLayout="row" fxLayoutAlign="start center">
+
+                <button mat-icon-button class="mr-0 mr-sm-16" [routerLink]="'/apps/dungos/products'">
+                    <mat-icon>arrow_back</mat-icon>
+                </button>
+                <div class="product-image mr-8 mr-sm-16" [@animate]="{value:'*',params:{delay:'50ms',scale:'0.2'}}">
+                    <img *ngIf="dungo.status" [src]="formatImage(dungo.qrCode)">
+                    <img *ngIf="!dungo.status" [src]="'assets/images/ecommerce/product-image-placeholder.png'">
+                </div>
+
+                <div fxLayout="column" fxLayoutAlign="start start"
+                    [@animate]="{value:'*',params:{delay:'100ms',x:'-25px'}}">
+                    <div class="h2" *ngIf="pageType ==='edit'">
+                        {{dungo.name}}
+                    </div>
+                    <div class="h2" *ngIf="pageType ==='new'">
+                        Nouveau Dungo
+                    </div>
+                    <div class="subtitle secondary-text">
+                        <span>Dungo Detail</span>
+                    </div>
+                </div>
+            </div>
+            <!-- / APP TITLE -->
+
+            <!-- <button mat-raised-button class="save-product-button" 
+                *ngIf="pageType ==='new'" (click)="addDungo()">
+                <span>Ajouter</span>
+            </button>
+
+            <button mat-raised-button class="save-product-button"
+                [disabled]="dungoForm.invalid || dungoForm.pristine" *ngIf="pageType ==='edit'"
+                (click)="saveDungo()">
+                <span>Enregistrer</span>
+            </button> -->
+        </div>
+        <!-- / HEADER -->
+
+        <!-- CONTENT CARD -->
+        <div class="content-card">
+
+            <!-- CONTENT -->
+            <div class="content">
+
+                <form name="dungoForm" [formGroup]="dungoForm" class="product w-100-p" fxLayout="column" fxFlex>
+
+                    <mat-tab-group>
+
+                        <mat-tab label="Info général">
+
+                            <div class="tab-content p-24" fusePerfectScrollbar>
+
+                                <mat-form-field appearance="outline" floatLabel="always" class="w-100-p">
+                                    <mat-label>Nom du dungo</mat-label>
+                                    <input matInput placeholder="Dungo Name" name="name" formControlName="name" required
+                                        readonly>
+                                </mat-form-field>
+
+                                <!-- <mat-form-field appearance="outline" floatLabel="always" class="w-100-p">
+                                    <mat-label>Statut</mat-label>
+                                    <mat-select formControlName="status"  placeholder="Statut" required>
+                                        <mat-option [value]="true">
+                                            Active
+                                        </mat-option>
+                                        <mat-option [value]="false">
+                                            Inactive
+                                        </mat-option>
+
+                                    </mat-select>
+                                </mat-form-field> -->
+
+                                <mat-form-field appearance="outline" floatLabel="always" class="w-100-p">
+                                    <mat-label>Cité</mat-label>
+                                    <input matInput placeholder="Cité" name="city" formControlName="city" required
+                                        readonly>
+                                    <!-- <mat-select formControlName="city" placeholder="Cité" required>
+                                        <mat-option *ngFor="let city of cities" [value]="city">
+                                            {{city}}
+                                        </mat-option>
+
+                                    </mat-select> -->
+                                </mat-form-field>
+
+                                <mat-form-field formGroupName="geolocalisation" appearance="outline" floatLabel="always"
+                                    class="w-100-p">
+                                    <mat-label>Latitude</mat-label>
+                                    <input matInput placeholder="Latitude" name="latitude" formControlName="lat"
+                                        required readonly>
+                                </mat-form-field>
+
+                                <mat-form-field formGroupName="geolocalisation" appearance="outline" floatLabel="always"
+                                    class="w-100-p">
+                                    <mat-label>Longitude</mat-label>
+                                    <input matInput placeholder="Longitude" name="longitude" formControlName="lon"
+                                        required readonly>
+                                </mat-form-field>
+                                <mat-accordion class="addresses">
+                                    <mat-expansion-panel>
+
+                                        <mat-expansion-panel-header>
+                                            <mat-panel-title>Dungo Location</mat-panel-title>
+                                        </mat-expansion-panel-header>
+                                        <app-map></app-map>
+
+
+                                    </mat-expansion-panel>
+                                </mat-accordion>
+                                <!-- <mat-form-field appearance="outline" floatLabel="always" class="w-100-p">
+                                    <mat-label>Product Description</mat-label>
+                                    <textarea matInput placeholder="Product Description"
+                                              name="description"
+                                              formControlName="description"
+                                              rows="5">
+                                    </textarea>
+                                </mat-form-field> -->
+
+                                <!-- <mat-form-field appearance="outline" floatLabel="always" class="w-100-p">
+
+                                    <mat-label>Categories</mat-label>
+
+                                    <mat-chip-list #categoryList name="categories" formControlName="categories">
+
+                                        <mat-chip *ngFor="let category of product.categories"
+                                                  [removable]="true" (removed)="product.removeCategory(category)">
+                                            {{category}}
+                                            <mat-icon matChipRemove>cancel</mat-icon>
+                                        </mat-chip>
+
+                                        <input [matChipInputFor]="categoryList"
+                                               [matChipInputAddOnBlur]="true"
+                                               (matChipInputTokenEnd)="product.addCategory($event)"/>
+
+                                    </mat-chip-list>
+
+                                </mat-form-field> -->
+
+                                <!-- <mat-form-field appearance="outline" floatLabel="always" class="w-100-p">
+
+                                    <mat-label>Tags</mat-label>
+
+                                    <mat-chip-list #tagList name="tags" formControlName="tags">
+
+                                        <mat-chip *ngFor="let tag of product.tags"
+                                                  [removable]="true" (removed)="product.removeTag(tag)">
+                                            {{tag}}
+                                            <mat-icon matChipRemove>cancel</mat-icon>
+                                        </mat-chip>
+
+                                        <input [matChipInputFor]="tagList"
+                                               [matChipInputAddOnBlur]="true"
+                                               (matChipInputTokenEnd)="product.addTag($event)"/>
+
+                                    </mat-chip-list>
+
+                                </mat-form-field> -->
+
+                            </div>
+
+                        </mat-tab>
+
+                        <mat-tab label="Dungo details">
+                            <div class="widget-group p-12" fxLayout="row wrap" fxFlex="100" *fuseIfOnDom
+                                [@animateStagger]="{value:'50'}">
+                                <fuse-widget [@animate]="{value:'*',params:{y:'100%'}}" class="widget" fxLayout="column"
+                                    fxFlex="100" fxFlex.gt-xs="50" fxFlex.gt-md="25">
+
+                                    <!-- Front -->
+                                    <!-- <div class="fuse-widget-front"> -->
+                                    <div class="pl-16 pr-8 py-16 h-52" fxLayout="row"
+                                        fxLayoutAlign="space-between center">
+                                        <div class="h3">Composte Récolté</div>
+
+                                        <!-- <button mat-icon-button fuseWidgetToggle class="fuse-widget-flip-button"
+                                            aria-label="more">
+                                            <mat-icon>more_vert</mat-icon>
+                                        </button> -->
+                                    </div>
+
+                                    <div class="pt-8 pb-32" fxLayout="column" fxLayoutAlign="center center">
+                                        <div class="red-fg font-size-80 line-height-72">
+                                            {{quantity}} <span class="red-fg font-size-60 line-height-72">Kg</span>
+                                        </div>
+                                        <div class="h2 secondary-text font-weight-500">Composte
+                                        </div>
+                                    </div>
+                                </fuse-widget>
+                                <fuse-widget [@animate]="{value:'*',params:{y:'100%'}}" class="widget" fxLayout="column"
+                                    fxFlex="100" fxFlex.gt-xs="50" fxFlex.gt-md="25">
+                                    <div class="pl-16 pr-8 py-16 h-52" fxLayout="row"
+                                        fxLayoutAlign="space-between center">
+                                        <div class="h3">CO2 Économisé</div>
+
+                                        <!-- <button mat-icon-button fuseWidgetToggle class="fuse-widget-flip-button"
+                                        aria-label="more">
+                                        <mat-icon>more_vert</mat-icon>
+                                    </button> -->
+                                    </div>
+
+                                    <div class="pt-8 pb-32" fxLayout="column" fxLayoutAlign="center center">
+                                        <div class="red-fg font-size-80 line-height-72">
+                                            0 <span class="red-fg font-size-60 line-height-72">Kg</span>
+                                        </div>
+                                        <div class="h2 secondary-text font-weight-500">CO2
+                                        </div>
+                                    </div>
+
+                                </fuse-widget>
+                               
+                            </div>
+
+
+                        </mat-tab>
+
+                        <mat-tab label="Composte details">
+                            <!-- CONTENT CARD -->
+                            <div class="tab-content p-24" fusePerfectScrollbar>
+
+                                <mat-table class="products-table" #table [dataSource]="dataSource" matSort
+                                    [@animateStagger]="{value:'50'}" fusePerfectScrollbar>
+
+                                    <!-- Name Column -->
+                                    <ng-container matColumnDef="type">
+                                        <mat-header-cell *matHeaderCellDef mat-sort-header>Type</mat-header-cell>
+                                        <mat-cell *matCellDef="let composte">
+                                            <p class="text-truncate">{{composte.fertiliserName}}</p>
+                                        </mat-cell>
+                                    </ng-container>
+
+                                    <!-- Quantity Column -->
+                                    <ng-container matColumnDef="quantity">
+                                        <mat-header-cell *matHeaderCellDef mat-sort-header>Quantity</mat-header-cell>
+                                        <mat-cell *matCellDef="let composte">
+                                            <p class="text-truncate">{{composte.quantity}} Kg</p>
+                                        </mat-cell>
+                                    </ng-container>
+                                    <!-- Azote Column -->
+                                    <ng-container matColumnDef="azote">
+                                        <mat-header-cell *matHeaderCellDef mat-sort-header>Azote</mat-header-cell>
+                                        <mat-cell *matCellDef="let composte">
+                                            <p class="text-truncate">{{composte.azote}}</p>
+                                        </mat-cell>
+                                    </ng-container>
+
+                                    <!-- Phosphore Column -->
+                                    <ng-container matColumnDef="phosphore">
+                                        <mat-header-cell *matHeaderCellDef mat-sort-header>Phosphore</mat-header-cell>
+                                        <mat-cell *matCellDef="let composte">
+                                            <p class="text-truncate">{{composte.phosphore}}</p>
+                                        </mat-cell>
+                                    </ng-container>
+
+                                    <!-- Potassuim Column -->
+                                    <ng-container matColumnDef="potassuim">
+                                        <mat-header-cell *matHeaderCellDef mat-sort-header>Potassuim</mat-header-cell>
+                                        <mat-cell *matCellDef="let composte">
+                                            <p class="text-truncate">{{composte.potassuim}}</p>
+                                        </mat-cell>
+                                    </ng-container>
+
+                                    <!-- Action Column -->
+                                    <ng-container matColumnDef="action">
+                                        <mat-header-cell *matHeaderCellDef fxHide fxShow.gt-xs>Action</mat-header-cell>
+                                        <mat-cell *matCellDef="let contact" fxHide fxShow.gt-xs>
+                                            <div fxFlex="row">
+                                                <button (click)="$event.stopPropagation();" mat-raised-button
+                                                    (click)="editContact(contact)" color="success">Edit</button>
+                                                <button (click)="$event.stopPropagation();" mat-raised-button
+                                                    (click)="openDialog('Delete',element)" color="warn">Delete</button>
+                                            </div>
+                                        </mat-cell>
+                                    </ng-container>
+
+                                    <mat-header-row *matHeaderRowDef="displayedColumns; sticky:true"></mat-header-row>
+
+                                    <mat-row *matRowDef="let dungo; columns: displayedColumns;" class="dungo" matRipple
+                                        [routerLink]="'/apps/e-commerce/products/'+dungo.id">
+                                    </mat-row>
+
+                                </mat-table>
+
+                                <mat-paginator #paginator [length]="dataSource.filteredData.length" [pageIndex]="0"
+                                    [pageSize]="10" [pageSizeOptions]="[5, 10, 25, 100]">
+                                </mat-paginator>
+
+                            </div>
+                            <!-- / CONTENT CARD -->
+                            <!-- <div class="tab-content p-24" fusePerfectScrollbar>
+
+                                <mat-form-field appearance="outline" floatLabel="always" class="w-100-p">
+                                    <mat-label>Tax Excluded Price</mat-label>
+                                    <input matInput placeholder="Tax Excluded Price"
+                                           name="priceTaxExcl"
+                                           formControlName="priceTaxExcl"
+                                           type="number">
+                                    <span matPrefix>$&nbsp;</span>
+                                </mat-form-field>
+
+                                <mat-form-field appearance="outline" floatLabel="always" class="w-100-p">
+                                    <mat-label>Tax Included Price</mat-label>
+                                    <input matInput placeholder="Tax Included Price"
+                                           name="priceTaxIncl"
+                                           formControlName="priceTaxIncl"
+                                           type="number">
+                                    <span matPrefix>$&nbsp;</span>
+                                </mat-form-field>
+
+                                <mat-form-field appearance="outline" floatLabel="always" class="w-100-p">
+                                    <mat-label>Tax Rate</mat-label>
+                                    <input matInput placeholder="Tax Rate"
+                                           name="taxRate"
+                                           formControlName="taxRate"
+                                           type="number">
+                                    <span matPrefix>&#37;&nbsp;</span>
+                                </mat-form-field>
+
+                                <mat-form-field appearance="outline" floatLabel="always" class="w-100-p">
+                                    <mat-label>Compared Price</mat-label>
+                                    <input matInput placeholder="Compared Price"
+                                           name="comparedPrice"
+                                           formControlName="comparedPrice"
+                                           type="number">
+                                    <span matPrefix>$&nbsp;</span>
+                                    <mat-hint align="start">Add a compare price to show next to the real price
+                                    </mat-hint>
+                                </mat-form-field>
+
+                            </div> -->
+                        </mat-tab>
+
+                        <mat-tab label="Invoices">
+                            <!-- <div class="tab-content p-24" fusePerfectScrollbar fxLayout="column">
+
+                                <div fxLayout="row" fxLayoutAlign="space-between">
+
+                                    <mat-form-field appearance="outline" floatLabel="always" fxFlex="30">
+                                        <mat-label>Width</mat-label>
+                                        <input matInput placeholder="Width"
+                                               name="Width"
+                                               formControlName="width">
+                                        <span matSuffix>cm</span>
+                                    </mat-form-field>
+
+                                    <mat-form-field appearance="outline" floatLabel="always" fxFlex="30">
+                                        <mat-label>Height</mat-label>
+                                        <input matInput placeholder="Height"
+                                               name="Height"
+                                               formControlName="height">
+                                        <span matSuffix>cm</span>
+                                    </mat-form-field>
+
+                                    <mat-form-field appearance="outline" floatLabel="always" fxFlex="30">
+                                        <mat-label>Depth</mat-label>
+                                        <input matInput placeholder="Depth"
+                                               name="Depth"
+                                               formControlName="depth">
+                                        <span matSuffix>cm</span>
+                                    </mat-form-field>
+
+                                </div>
+
+                                <mat-form-field appearance="outline" floatLabel="always" class="w-100-p">
+                                    <mat-label>Weight</mat-label>
+                                    <input matInput placeholder="Weight"
+                                           name="Weight"
+                                           formControlName="weight">
+                                    <span matSuffix>kg</span>
+                                </mat-form-field>
+
+                                <mat-form-field appearance="outline" floatLabel="always" class="w-100-p">
+                                    <mat-label>Extra Shipping Fee</mat-label>
+                                    <input matInput placeholder="Extra Shipping Fee"
+                                           name="extraShippingFee"
+                                           formControlName="extraShippingFee"
+                                           type="number">
+                                    <span matPrefix>$&nbsp;</span>
+                                </mat-form-field>
+
+                            </div> -->
+
+                        </mat-tab>
+
+                    </mat-tab-group>
+
+                </form>
+
+            </div>
+            <!-- / CONTENT -->
+
+        </div>
+        <!-- / CONTENT CARD -->
+
+    </div>
+    <!-- / CENTER -->
+
+</div>

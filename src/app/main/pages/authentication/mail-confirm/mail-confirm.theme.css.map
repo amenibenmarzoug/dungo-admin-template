@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "mail-confirm.theme.scss"
+    ],
+    "names": [],
+    "file": "mail-confirm.theme.css"
+}

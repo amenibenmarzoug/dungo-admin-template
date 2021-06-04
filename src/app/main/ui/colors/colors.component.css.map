@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAMY,KANP,CAED,QAAQ,CAEJ,mBAAmB,CAEf,aAAa,CAAC;EACV,aAAa,EAAE,GAAG,CAAC,KAAK,CAAC,yBAAyB;CACrD;;AARb,AAYgB,KAZX,CAED,QAAQ,CAEJ,mBAAmB,CAMf,MAAM,CAEF,OAAO,CAAC;EACJ,gBAAgB,EAAE,KAAK;CAC1B;;AAdjB,AAiBY,KAjBP,CAED,QAAQ,CAEJ,mBAAmB,CAaf,WAAW,CAAC;EACR,UAAU,EAAE,2BAA2B;CAC1C",
+    "sources": [
+        "colors.component.scss"
+    ],
+    "names": [],
+    "file": "colors.component.css"
+}

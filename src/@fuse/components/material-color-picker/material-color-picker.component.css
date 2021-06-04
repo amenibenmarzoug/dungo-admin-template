@@ -1,0 +1,46 @@
+.fuse-material-color-picker-menu {
+  width: 245px;
+}
+
+.fuse-material-color-picker-menu .mat-menu-content {
+  padding: 0;
+}
+
+.fuse-material-color-picker-menu .mat-menu-content .views {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  min-height: 165px;
+}
+
+.fuse-material-color-picker-menu .mat-menu-content .views .view {
+  overflow: hidden;
+}
+
+.fuse-material-color-picker-menu .mat-menu-content .views .view .colors {
+  padding: 1px 0 0 0;
+  margin-left: -1px;
+}
+
+.fuse-material-color-picker-menu .mat-menu-content .views .view .colors .color {
+  width: 40px;
+  height: 40px;
+  margin: 0 0 1px 1px;
+  border-radius: 0;
+  cursor: pointer;
+  -webkit-transition: border-radius 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition: border-radius 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.fuse-material-color-picker-menu .mat-menu-content .views .view .colors .color:hover {
+  border-radius: 20%;
+}
+
+.fuse-material-color-picker-menu .mat-menu-content .views .view .colors .color.selected {
+  border-radius: 50% !important;
+}
+/*# sourceMappingURL=material-color-picker.component.css.map */

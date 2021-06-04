@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "search-classic.theme.scss"
+    ],
+    "names": [],
+    "file": "search-classic.theme.css"
+}

@@ -1,0 +1,21 @@
+.folded:not(.unfolded) :host > .group-title {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.folded:not(.unfolded) :host > .group-title > span {
+  opacity: 0;
+  -webkit-transition: opacity 200ms ease;
+  transition: opacity 200ms ease;
+}
+
+.folded:not(.unfolded) :host > .group-title:before {
+  content: '';
+  display: block;
+  position: absolute;
+  min-width: 1.6rem;
+  border-top: 2px solid;
+  opacity: 0.2;
+}
+/*# sourceMappingURL=group.component.css.map */

@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAEI,KAFC,CAED,QAAQ,CAAA;EACJ,SAAS,EAAE,MAAM;CACpB",
+    "sources": [
+        "material-color-picker.component.scss"
+    ],
+    "names": [],
+    "file": "material-color-picker.component.css"
+}

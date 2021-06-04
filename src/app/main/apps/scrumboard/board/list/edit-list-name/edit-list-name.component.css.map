@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAEI,+BAF2B,CAE3B,iBAAiB,CAAC;EACd,aAAa,EAAE,QAAQ;EACvB,QAAQ,EAAE,MAAM;EAChB,SAAS,EAAE,IAAI;EACf,WAAW,EAAE,GAAG;EAChB,MAAM,EAAE,OAAO;CAClB",
+    "sources": [
+        "edit-list-name.component.scss"
+    ],
+    "names": [],
+    "file": "edit-list-name.component.css"
+}

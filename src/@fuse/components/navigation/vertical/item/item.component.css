@@ -1,0 +1,7 @@
+.folded:not(.unfolded) :host .nav-link > .nav-link-title,
+.folded:not(.unfolded) :host .nav-link > .nav-link-badge {
+  opacity: 0;
+  -webkit-transition: opacity 200ms ease;
+  transition: opacity 200ms ease;
+}
+/*# sourceMappingURL=item.component.css.map */

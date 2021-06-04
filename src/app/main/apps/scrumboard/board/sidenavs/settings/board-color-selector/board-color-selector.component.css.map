@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAIQ,+BAJuB,CAE3B,OAAO,CAEH,MAAM,CAAC;EACH,QAAQ,EAAE,QAAQ;EAClB,MAAM,EAAE,OAAO;CAClB",
+    "sources": [
+        "board-color-selector.component.scss"
+    ],
+    "names": [],
+    "file": "board-color-selector.component.css"
+}

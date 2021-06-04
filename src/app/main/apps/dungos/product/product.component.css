@@ -1,0 +1,60 @@
+#product .header .product-image {
+  overflow: hidden;
+  width: 56px;
+  min-width: 56px;
+  max-width: 56px;
+  height: 56px;
+  min-height: 56px;
+  max-height: 56px;
+  border-radius: 4px;
+}
+
+#product .header .product-image img {
+  height: 100%;
+  width: auto;
+  max-width: none;
+}
+
+#product .header .subtitle {
+  margin: 6px 0 0 0;
+}
+
+#product .content .mat-tab-group,
+#product .content .mat-tab-body-wrapper,
+#product .content .tab-content {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  max-width: 100%;
+}
+
+#product .content .mat-tab-body-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#product .content .mat-tab-label {
+  height: 64px;
+}
+
+#product .content .product-image {
+  overflow: hidden;
+  width: 128px;
+  height: 128px;
+  margin-right: 16px;
+  margin-bottom: 16px;
+  border-radius: 4px;
+}
+
+#product .content .product-image img {
+  height: 100%;
+  width: auto;
+  max-width: none;
+}
+
+#product .content .mat-form-field-appearance-outline .mat-form-field-prefix,
+#product .content .mat-form-field-appearance-outline .mat-form-field-suffix {
+  top: 0;
+}
+/*# sourceMappingURL=product.component.css.map */

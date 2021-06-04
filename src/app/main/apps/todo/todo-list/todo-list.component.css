@@ -1,0 +1,23 @@
+todo-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 auto;
+          flex: 1 0 auto;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: relative;
+  padding: 0;
+  border-right: 1px solid;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+todo-list .no-todos-text {
+  font-size: 24px;
+  font-weight: 300;
+}
+/*# sourceMappingURL=todo-list.component.css.map */
