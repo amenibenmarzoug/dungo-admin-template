@@ -7,12 +7,12 @@ export const navigationManager: FuseNavigation[] = [
         type: 'group',
         icon: 'apps',
         children: [
-            {
-                id: 'dashboards',
-                title: 'Dashboards',
-                type: 'collapsable',
-                icon: 'dashboard',
-                children: [
+            // {
+            //     id: 'dashboards',
+            //     title: 'Dashboards',
+            //     type: 'collapsable',
+            //     icon: 'dashboard',
+            //     children: [
                     {
                         id: 'manager-dashboard',
                         title: 'Dungos',
@@ -21,8 +21,8 @@ export const navigationManager: FuseNavigation[] = [
                     },
 
 
-                ],
-            },
+            //     ],
+            // },
         ],
     }
 ]

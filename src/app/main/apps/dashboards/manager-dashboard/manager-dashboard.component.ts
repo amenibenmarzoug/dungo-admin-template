@@ -37,22 +37,18 @@ export class ManagerDashboardComponent implements OnInit {
 
   action: string;
   dungo: Dungo;
+  longeur: number;
   dungoForm: FormGroup;
   dialogTitle: string;
   dialogRef: any;
   confirmDialogRef: MatDialogRef<FuseConfirmDialogComponent>;
 
-  cities: string[] = [
-    'Tunis', 'Ariana', 'Ben Arous', 'Manouba', 'Nabeul', 'Zaghouan', 'Bizerte', 'Béja', 'Jendouba', 'Kef', 'Siliana',
-    'Sousse', 'Monastir', 'Mahdia', 'Sfax', 'Kairouan', 'Kasserine', 'Sidi Bouzid', 'Gabès', 'Mednine', 'Tataouine', 'Gafsa', 'Tozeur', 'Kebili'
-
-  ];
   // Private
   private _unsubscribeAll: Subject<any>;
 
   constructor(
     public _matDialog: MatDialog,
-    private _ecommerceProductsService: EcommerceProductsService
+    public _ecommerceProductsService: EcommerceProductsService
   ) {
 
     // Set the private defaults
@@ -61,13 +57,12 @@ export class ManagerDashboardComponent implements OnInit {
   formatImage(img: any): any {
     return 'data:image/jpeg;base64,' + img;
   }
-
+  
   /**
    * On init
    */
   ngOnInit(): void {
     this.dataSource = new FilesDataSource(this._ecommerceProductsService, this.paginator, this.sort);
-
     fromEvent(this.filter.nativeElement, 'keyup')
       .pipe(
         takeUntil(this._unsubscribeAll),
@@ -81,7 +76,9 @@ export class ManagerDashboardComponent implements OnInit {
 
         this.dataSource.filter = this.filter.nativeElement.value;
       });
+      
   }
+ 
   // Define our base layers so we can reference them multiple times
   streetMaps = tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     detectRetina: true,
@@ -91,9 +88,10 @@ export class ManagerDashboardComponent implements OnInit {
     detectRetina: true,
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
   });
-
+  
   // Marker for the top of Mt. Ranier
-  // summit = marker([this._ecommerceProductService.dungo.geolocalisation.lat, this._ecommerceProductService.dungo.geolocalisation.lon], {
+  
+  // summit[i] = marker([this._ecommerceProductService.dungo.geolocalisation.lat, this._ecommerceProductService.dungo.geolocalisation.lon], {
   //   icon: icon({
   //     iconSize: [25, 41],
   //     iconAnchor: [13, 41],
@@ -108,6 +106,8 @@ export class ManagerDashboardComponent implements OnInit {
     zoom: 12,
     center: latLng([36.84829, 10.181667])
   };
+
+  
 
 
 }

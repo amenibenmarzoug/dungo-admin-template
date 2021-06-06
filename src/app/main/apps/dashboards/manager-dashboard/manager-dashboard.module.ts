@@ -58,25 +58,17 @@ const routes: Routes = [
         MatTableModule,
         MatTabsModule,
         LeafletModule,
-        MatButtonModule,
         MatChipsModule,
         MatExpansionModule,
-    
         MatInputModule,
         MatPaginatorModule,
         MatRippleModule,
-        
         MatSortModule,
         MatSnackBarModule,
-           
         MatCheckboxModule,
         MatDatepickerModule,
-       
-
         MatToolbarModule,
         FuseConfirmDialogModule,
-        
-
         NgxChartsModule,
         NgxChartsModule,
 

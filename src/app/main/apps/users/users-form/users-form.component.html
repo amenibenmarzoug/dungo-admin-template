@@ -39,8 +39,11 @@
                     <mat-icon matSuffix class="secondary-text">account_circle</mat-icon>
                     <mat-select (selectionChange)="getRoleForm($event.value)">
                        
-                        <mat-option *ngFor="let role of roles" [value]="role">
-                            {{ role.name}} 
+                        <mat-option [value]="'AGENT'">
+                            Agent
+                        </mat-option>
+                        <mat-option [value]="'USER'">
+                            Dunger
                         </mat-option>
                     </mat-select>
                 </mat-form-field>

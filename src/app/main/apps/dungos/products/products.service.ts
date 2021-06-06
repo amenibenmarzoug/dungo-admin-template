@@ -10,7 +10,10 @@ const AUTH_API = 'http://localhost:8085/api/';
 export class EcommerceProductsService implements Resolve<any>
 {
     dungos: any[];
+    listLength: number;
+    dungosDetails: any[];
     onDungosChanged: BehaviorSubject<any>;
+    onDungosDetailsChanged: BehaviorSubject<any>;
     private sanitizer: DomSanitizer;
     private image: any;
     private readonly imageType: string = 'data:image/PNG;base64,';
@@ -25,6 +28,7 @@ export class EcommerceProductsService implements Resolve<any>
     ) {
         // Set the defaults
         this.onDungosChanged = new BehaviorSubject({});
+        this.onDungosDetailsChanged = new BehaviorSubject({});
     }
 
     /**
@@ -38,7 +42,8 @@ export class EcommerceProductsService implements Resolve<any>
         return new Promise<void>((resolve, reject) => {
 
             Promise.all([
-                this.getDungos()
+                this.getDungos(),
+                this.getDungosLocations()
             ]).then(
                 () => {
                     resolve();
@@ -60,6 +65,26 @@ export class EcommerceProductsService implements Resolve<any>
                     //response.qrCode = this.sanitizer.bypassSecurityTrustUrl(this.imageType + response.qrCode); 
                     this.dungos = response;
                     this.onDungosChanged.next(this.dungos);
+                    resolve(response);
+                }, reject);
+        });
+    }
+
+     /**
+     * Get products
+     *
+     * @returns {Promise<any>}
+     */
+      getDungosLocations(): Promise<any> {
+        return new Promise((resolve, reject) => {
+            this._httpClient.get(AUTH_API + 'dungo/details')
+                .subscribe((response: any) => {
+                    //response.qrCode = this.sanitizer.bypassSecurityTrustUrl(this.imageType + response.qrCode); 
+                    this.dungosDetails = response;
+                    console.log(response)
+                    this.listLength = response.length;
+                    console.log(this.listLength)
+                    this.onDungosDetailsChanged.next(this.dungosDetails);
                     resolve(response);
                 }, reject);
         });

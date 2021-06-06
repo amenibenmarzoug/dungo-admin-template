@@ -16,6 +16,7 @@ import { locale as navigationEnglish } from 'app/navigation/i18n/en';
 import { locale as navigationTurkish } from 'app/navigation/i18n/tr';
 import { TokenStorageService } from './main/pages/authentication/common-auth/token-storage.service';
 import { navigationManager } from './navigation/navigationManager';
+import { navigationAgent } from './navigation/navigationAgent';
 
 @Component({
     selector: 'app',
@@ -30,6 +31,7 @@ export class AppComponent implements OnInit, OnDestroy {
     isLoggedIn = false;
     showAdminBoard = false;
     showManagerBoard = false;
+    showAgentBoard = false;
     // Private
     private _unsubscribeAll: Subject<any>;
 
@@ -108,6 +110,7 @@ export class AppComponent implements OnInit, OnDestroy {
             this.roles = user.roles;
             this.showAdminBoard = this.roles.includes('ADMIN');
             this.showManagerBoard = this.roles.includes('MANAGER');
+            this.showAgentBoard = this.roles.includes('AGENT');
 
         }
 
@@ -145,6 +148,31 @@ export class AppComponent implements OnInit, OnDestroy {
 
             // Set the main navigation as our current navigation
             this._fuseNavigationService.setCurrentNavigation('manager');
+
+            // Add languages
+            this._translateService.addLangs(['en', 'tr', 'fr']);
+
+            // Set the default language
+            this._translateService.setDefaultLang('fr');
+
+            // Set the navigation translations
+            this._fuseTranslationLoaderService.loadTranslations(navigationEnglish, navigationTurkish);
+
+            // Use a language
+            this._translateService.use('fr');
+
+
+        }
+
+        if (this.showAgentBoard) {
+            // Get default navigation
+            this.navigation = navigationAgent;
+
+            // Register the navigation to the service
+            this._fuseNavigationService.register('agent', this.navigation);
+
+            // Set the main navigation as our current navigation
+            this._fuseNavigationService.setCurrentNavigation('agent');
 
             // Add languages
             this._translateService.addLangs(['en', 'tr', 'fr']);

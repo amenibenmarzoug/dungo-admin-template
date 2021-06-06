@@ -52,10 +52,9 @@
                     <ng-container matColumnDef="image">
                          <mat-header-cell *matHeaderCellDef></mat-header-cell>
                          <mat-cell *matCellDef="let dungo">
-                              <img class="product-image" *ngIf="dungo.status" [alt]="dungo.name"
+                              <img class="product-image"  [alt]="dungo.name"
                                    [src]="formatImage(dungo.qrCode)" />
-                              <img *ngIf="!dungo.status"
-                                   [src]="'assets/images/ecommerce/product-image-placeholder.png'">
+                             
                          </mat-cell>
                     </ng-container>
                    
@@ -92,10 +91,8 @@
                          <mat-header-cell *matHeaderCellDef fxHide fxShow.gt-xs>Action</mat-header-cell>
                          <mat-cell *matCellDef="let contact" fxHide fxShow.gt-xs>
                               <div fxFlex="row">
-                                   <button (click)="$event.stopPropagation();" mat-raised-button
-                                        (click)="editContact(contact)" color="success">Edit</button>
-                                   <button (click)="$event.stopPropagation();" mat-raised-button
-                                        (click)="openDialog('Delete',element)" color="warn">Delete</button>
+                                   <button  (click)="$event.stopPropagation();" mat-raised-button
+                                        (click)="editContact(contact)" color="success">Modifier</button>
                               </div>
                          </mat-cell>
                     </ng-container>

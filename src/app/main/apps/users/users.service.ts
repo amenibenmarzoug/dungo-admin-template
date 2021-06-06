@@ -95,7 +95,6 @@ export class UsersService implements Resolve<any>
                     .subscribe((response: any) => {
 
                         this.users = response;
-
                         if (this.filterBy === 'dungers') {
                             this.users = this.users.filter(_contact => {
                                 console.log(_contact.roles[0].name)
@@ -106,7 +105,7 @@ export class UsersService implements Resolve<any>
                         }
                         if (this.filterBy === 'managers') {
                             this.users = this.users.filter(_contact => {
-                                if (_contact.roles[0].name == "MANAGER") { return true; }
+                                if (_contact.roles[0].name == "AGENT") { return true; }
                                 return false;
     
                             });
@@ -222,10 +221,8 @@ export class UsersService implements Resolve<any>
         return new Promise((resolve, reject) => {
             contact.password = contact.phoneNumber;
             contact.roles = this.role;
-            console.log("haya 3aaad" + contact.roles)
             this._httpClient.post(AUTH_API + 'user/admin', contact)
-                .subscribe(response => {
-                   
+                .subscribe(response => {                
                     this.getUsers();
                     resolve(response);
                 });

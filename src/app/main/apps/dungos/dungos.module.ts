@@ -100,7 +100,6 @@ const routes: Routes = [
         MatSnackBarModule,
         MatTableModule,
         MatTabsModule,
-        MatButtonModule,        
         FuseSharedModule,        
         MatCheckboxModule,
         MatDatepickerModule,
